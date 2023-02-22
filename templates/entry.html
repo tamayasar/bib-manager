@@ -1,0 +1,59 @@
+<b>Add Entry</b>
+<br>
+<br>
+<form method="post" enctype="multipart/form-date">
+  <table>
+    <tr>
+      <td align="right">Reference Name:</td>
+      <td align="left"><input type="text" name="name"></td>
+    </tr>
+    <tr>
+      <td align="right">Author:</td>
+      <td align="left"><input type="text" name="author"></td>
+    </tr>
+    <tr>
+      <td align="right">Title:</td>
+      <td align="left"><input type="text" name="title"></td>
+    </tr>
+    <tr>
+      <td align="right">Journal:</td>
+      <td align="left"><input type="text" name="journal"></td>
+    </tr>
+    <tr>
+      <td align="right">Volume:</td>
+      <td align="left"><input type="text" name="volume"></td>
+    </tr>
+    <tr>
+      <td align="right">Number:</td>
+      <td align="left"><input type="text" name="number"></td>
+    </tr>
+    <tr>
+      <td align="right">Pages:</td>
+      <td align="left"><input type="text" name="pages"></td>
+    </tr>
+    <tr>
+      <td align="right">Year:</td>
+      <td align="left"><input type="text" name="year"></td>
+    </tr>
+    <tr>
+      <td align="right">DOI:</td>
+      <td align="left"><input type="text" name="doi"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td align="right"><input type="submit" value="Add"></td>
+    </tr>
+  </table>
+</form>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul style="list-style: none; padding-left:0">
+{% for message in messages %}
+<li style="white-space: pre-wrap">
+<tt>{{ message }}</tt>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<a style="color: blue; text-decoration: none" href="{{ url_for("download") }}">Download</a>

@@ -1,0 +1,20 @@
+<b>Bibliography Manager</b>
+<br>
+<br>
+Upload your .bib file:
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="file">
+<input type="submit" value="Upload">
+</form>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul style="list-style: none; padding-left:0">
+{% for message in messages %}
+<li style="white-space: pre-wrap">
+<tt>{{ message }}</tt>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<a style="color: blue; text-decoration: none" href="{{ url_for("entry_get") }}">Add Entry</a>
